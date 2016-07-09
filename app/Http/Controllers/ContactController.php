@@ -11,20 +11,23 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('welcome');
+    }
+
+    /**
+     * Returns contacts.
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function apiSearch(Request $request)
     {
-        $contacts = Contact::nameLike($request->name)
+        return Contact::nameLike($request->name)
             ->rutLike($request->rut)
-            ->paginate(10);
-
-        Session([
-            'name' => $request->name,
-            'rut'  => $request->rut
-        ]);
-
-        return view('welcome', compact('contacts'));
+            ->paginate(11);
     }
 }

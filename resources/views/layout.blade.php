@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="contactsApp">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contacts</title>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/underscore-min.js"></script>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   @yield('head')
 </head>
@@ -26,9 +28,9 @@
       </div>
     </div>
   </nav>
-
   <div class="container">
     @yield('content')
+    @yield('scripts')
   </div>
 </body>
 </html>
