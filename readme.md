@@ -1,4 +1,4 @@
-# Contacts App! Laravel 5.2
+# Contacts App! Laravel 5.2 & AngularJS
 
 ## Configuracion
 
